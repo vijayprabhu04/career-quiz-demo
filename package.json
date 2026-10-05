@@ -1,0 +1,10 @@
+{
+  "name": "career-quiz",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Live DevOps demo app for the Oct 28 2026 guest lecture.",
+  "scripts": {
+    "test": "node --test tests/"
+  }
+}
