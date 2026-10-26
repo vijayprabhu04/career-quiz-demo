@@ -11,5 +11,5 @@ Deploy > Manage deployments > pencil icon > Version: **New version** > Deploy.
 
 ## Rehearse and run
 - No backend needed to rehearse: open `results.html?demo`.
-- Big screen: open `results.html`. Left and right arrow keys change the question. Press R to reveal the correct answer on basics questions.
+- Big screen: open `results.html`. All 8 questions show on one screen. Press R to reveal the correct answers on questions 1 to 5, or click one question.
 - Before the real session: clear all rows in the "Poll" tab (the count comes from it).
