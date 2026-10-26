@@ -2,70 +2,70 @@
 export const RESULTS = {
   ai: {
     title: "AI Engineer",
-    blurb: "You see the pattern before anyone explains it. You'd rather teach a system than repeat yourself.",
+    blurb: "You like making machines smart. The AI sessions today were your zone. Start with Python and one free machine learning course.",
   },
   devops: {
     title: "DevOps Engineer",
-    blurb: "You're the one who asks 'but what happens when it breaks?' before anyone else does. Reliability is your love language.",
+    blurb: "You want things to run smoothly and never break. You are the person who keeps the app alive at 9 PM on a Friday. Start with Git and Linux.",
   },
   product: {
     title: "Product Manager",
-    blurb: "You care less about how it's built and more about whether anyone actually needed it. Rare and valuable.",
+    blurb: "You think about people first and code second. You decide what is worth building. Start by asking why for every app you use.",
   },
   data: {
     title: "Data Analyst",
-    blurb: "Numbers tell you things people won't say out loud. You just want to see the real story in the mess.",
+    blurb: "You like finding the answer hiding in the numbers. Start with Excel, then SQL, then a little Python.",
   },
   security: {
     title: "Security Engineer",
-    blurb: "You already found the hole in this quiz's logic. Good. That instinct is the whole job.",
+    blurb: "You ask what could go wrong and who could misuse it. That instinct is the whole job. Start with how the internet and passwords really work.",
   },
 };
 
 export const QUESTIONS = [
   {
-    prompt: "A project just broke in production. Your first move?",
+    prompt: "You open Swiggy to order biryani. What do you notice first?",
     options: [
-      { text: "Check the logs and the last deploy, calmly", result: "devops" },
-      { text: "Ask who it affects and how badly, first", result: "product" },
-      { text: "Pull the data to see how often this actually happens", result: "data" },
-      { text: "Wonder if someone got in who shouldn't have", result: "security" },
+      { text: "The 'recommended for you' list is oddly accurate", result: "ai" },
+      { text: "It loads fast and never crashes", result: "devops" },
+      { text: "Ordering takes only a few taps", result: "product" },
+      { text: "Is my payment safe?", result: "security" },
     ],
   },
   {
-    prompt: "Pick a Sunday afternoon project.",
+    prompt: "ChatGPT gives you a wrong answer. What do you do?",
     options: [
-      { text: "Train a small model on something dumb and fun", result: "ai" },
-      { text: "Automate a chore you're tired of doing by hand", result: "devops" },
-      { text: "Interview 5 friends about a problem they complain about", result: "product" },
-      { text: "Build a spreadsheet that answers a question you're curious about", result: "data" },
+      { text: "Wonder why it got it wrong and how to make it better", result: "ai" },
+      { text: "Check the facts against real data", result: "data" },
+      { text: "Wonder if someone could trick it into saying bad things", result: "security" },
+      { text: "Think about how to make the tool more useful for people", result: "product" },
     ],
   },
   {
-    prompt: "Your group project has a tight deadline. You gravitate toward...",
+    prompt: "Today we got the top Hacker News stories three ways. Which part would you enjoy most?",
     options: [
-      { text: "Making sure the build never breaks for anyone else", result: "devops" },
-      { text: "Deciding what actually ships vs. what gets cut", result: "product" },
-      { text: "Checking who has access to what, and why", result: "security" },
-      { text: "The one teammate trying to make it 'smart' somehow", result: "ai" },
+      { text: "Teaching the AI to do it by itself", result: "ai" },
+      { text: "Making it run automatically every morning", result: "devops" },
+      { text: "Finding which stories get the most points", result: "data" },
+      { text: "Deciding what a news app should show first", result: "product" },
     ],
   },
   {
-    prompt: "Which sentence sounds most like you?",
+    prompt: "You push your code and the website breaks for everyone. What do you do first?",
     options: [
-      { text: "\"It works, but can it explain why it decided that?\"", result: "ai" },
-      { text: "\"It works on my machine isn't an answer.\"", result: "devops" },
-      { text: "\"Just because we can build it doesn't mean we should.\"", result: "product" },
-      { text: "\"Trust, but verify. Mostly verify.\"", result: "security" },
+      { text: "Check the logs and undo the last change", result: "devops" },
+      { text: "Find out how many users are affected", result: "data" },
+      { text: "Check if someone broke in on purpose", result: "security" },
+      { text: "Tell users what happened and when it will be fixed", result: "product" },
     ],
   },
   {
-    prompt: "Pick the win that would feel best.",
+    prompt: "Which line would you like on your future job card?",
     options: [
-      { text: "A model that gets noticeably smarter with your changes", result: "ai" },
-      { text: "A dashboard that changes how a team makes decisions", result: "data" },
-      { text: "A feature that was actually missing, now shipped", result: "product" },
-      { text: "Catching a vulnerability before anyone else noticed it", result: "security" },
+      { text: "I teach machines to learn", result: "ai" },
+      { text: "I keep apps running 24/7", result: "devops" },
+      { text: "I turn numbers into answers", result: "data" },
+      { text: "I protect people's data", result: "security" },
     ],
   },
 ];

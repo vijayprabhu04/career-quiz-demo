@@ -105,3 +105,39 @@ footer {
   font-size: 13px;
   text-align: center;
 }
+
+.submit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 24px 0 8px;
+  padding-top: 20px;
+  border-top: 1px solid #26263a;
+}
+.submit-hint { margin: 0; color: var(--muted); font-size: 14px; }
+.submit-form input,
+.submit-form select {
+  background: #1d1d2c;
+  border: 1px solid #2c2c40;
+  color: var(--ink);
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+#submit-btn {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: none;
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#submit-btn:disabled { opacity: 0.6; cursor: default; }
+.submit-msg { margin: 0; min-height: 18px; color: var(--muted); font-size: 14px; }
+#restart {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid #2c2c40;
+}
