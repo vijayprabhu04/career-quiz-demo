@@ -3,7 +3,7 @@
 // How to use: open quiz-data.js, find the last option in the final question
 // (the one that currently reads `result: "security"`), and change it to
 // `result: "sekurity"` (typo, on purpose). Commit + push. The test job fails
-// immediately with a clear assertion message naming the bad option — the
+// immediately with a clear assertion message naming the bad option, the
 // deploy job never runs because it needs the test job to pass first.
 //
 // Narrate: "This typo would've shipped silently an hour ago. Now it can't."
