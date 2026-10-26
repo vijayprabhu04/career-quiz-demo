@@ -27,11 +27,12 @@ function doGet() {
   const qcounts = Array.from({ length: QUESTIONS }, () => [0, 0, 0, 0]);
   let total = 0;
   rows.forEach((r) => {
-    if (!(r[0] instanceof Date)) return;
+    if (r[0] === "" || r[0] === null) return;
     total++;
     for (let q = 0; q < QUESTIONS; q++) {
-      const v = r[q + 1];
-      if (v !== "" && qcounts[q][v] !== undefined) qcounts[q][v]++;
+      if (r[q + 1] === "") continue;
+      const v = Number(r[q + 1]);
+      if (qcounts[q][v] !== undefined) qcounts[q][v]++;
     }
   });
   return ContentService.createTextOutput(JSON.stringify({ total, qcounts })).setMimeType(ContentService.MimeType.JSON);
