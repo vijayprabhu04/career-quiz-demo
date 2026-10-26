@@ -2,18 +2,24 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { QUESTIONS, RESULTS } from "../quiz-data.js";
 
-test("has exactly 5 questions", () => {
-  assert.equal(QUESTIONS.length, 5);
+test("has exactly 8 questions", () => {
+  assert.equal(QUESTIONS.length, 8);
 });
 
-test("every question has at least 3 options", () => {
+test("every question has exactly 4 options", () => {
   for (const q of QUESTIONS) {
-    assert.ok(q.options.length >= 3, `"${q.prompt}" needs at least 3 options`);
+    assert.equal(q.options.length, 4, `"${q.prompt}" needs exactly 4 options`);
   }
 });
 
-test("every option maps to a real result", () => {
-  for (const q of QUESTIONS) {
+test("every basics question has a valid correct answer", () => {
+  for (const q of QUESTIONS.filter((q) => q.correct !== undefined)) {
+    assert.ok(q.correct >= 0 && q.correct < q.options.length, `"${q.prompt}" has a bad correct index`);
+  }
+});
+
+test("every career option maps to a real result", () => {
+  for (const q of QUESTIONS.filter((q) => q.correct === undefined)) {
     for (const opt of q.options) {
       assert.ok(
         RESULTS[opt.result],

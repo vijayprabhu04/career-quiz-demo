@@ -115,15 +115,6 @@ footer {
   border-top: 1px solid #26263a;
 }
 .submit-hint { margin: 0; color: var(--muted); font-size: 14px; }
-.submit-form input,
-.submit-form select {
-  background: #1d1d2c;
-  border: 1px solid #2c2c40;
-  color: var(--ink);
-  padding: 14px 16px;
-  border-radius: 12px;
-  font-size: 16px;
-}
 #submit-btn {
   background: var(--accent);
   color: var(--accent-ink);
@@ -141,3 +132,19 @@ footer {
   color: var(--muted);
   border: 1px solid #2c2c40;
 }
+
+.option { display: flex; align-items: center; gap: 14px; }
+.letter {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #2c2c40;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+#result h1 { margin-bottom: 12px; }

@@ -1,16 +1,18 @@
-// Quiz content for the live DevOps demo. Edit THIS file on stage for the visible live change.
+// Poll content for the live DevOps demo. Edit THIS file on stage for the visible live change.
+// Questions 1-5: basics from today's sessions (one correct answer, `correct` = option index).
+// Questions 6-8: career questions (each option points to a career in RESULTS).
 export const RESULTS = {
   ai: {
     title: "AI Engineer",
-    blurb: "You like making machines smart. The AI sessions today were your zone. Start with Python and one free machine learning course.",
+    blurb: "You like making machines smart. Start with Python and one free machine learning course.",
   },
   devops: {
     title: "DevOps Engineer",
-    blurb: "You want things to run smoothly and never break. You are the person who keeps the app alive at 9 PM on a Friday. Start with Git and Linux.",
+    blurb: "You want things to run smoothly and never break. Start with Git and Linux.",
   },
   product: {
     title: "Product Manager",
-    blurb: "You think about people first and code second. You decide what is worth building. Start by asking why for every app you use.",
+    blurb: "You think about people first and code second. Start by asking why for every app you use.",
   },
   data: {
     title: "Data Analyst",
@@ -18,54 +20,86 @@ export const RESULTS = {
   },
   security: {
     title: "Security Engineer",
-    blurb: "You ask what could go wrong and who could misuse it. That instinct is the whole job. Start with how the internet and passwords really work.",
+    blurb: "You ask what could go wrong and who could misuse it. Start with how passwords and the internet really work.",
   },
 };
 
 export const QUESTIONS = [
   {
-    prompt: "You open Swiggy to order biryani. What do you notice first?",
+    prompt: "In the biryani order story, who decides how the app looks and feels?",
+    correct: 1,
     options: [
-      { text: "The 'recommended for you' list is oddly accurate", result: "ai" },
-      { text: "It loads fast and never crashes", result: "devops" },
-      { text: "Ordering takes only a few taps", result: "product" },
-      { text: "Is my payment safe?", result: "security" },
+      { text: "Backend engineer" },
+      { text: "UI/UX designer" },
+      { text: "Security engineer" },
+      { text: "Data scientist" },
     ],
   },
   {
-    prompt: "ChatGPT gives you a wrong answer. What do you do?",
+    prompt: "What can an AI agent do that a simple chatbot cannot?",
+    correct: 2,
     options: [
-      { text: "Wonder why it got it wrong and how to make it better", result: "ai" },
-      { text: "Check the facts against real data", result: "data" },
-      { text: "Wonder if someone could trick it into saying bad things", result: "security" },
-      { text: "Think about how to make the tool more useful for people", result: "product" },
+      { text: "Only answer questions in a chat box" },
+      { text: "Only draw pictures" },
+      { text: "Plan, run code and fix its own mistakes (with your approval)" },
+      { text: "Work without any electricity" },
     ],
   },
   {
-    prompt: "Today we got the top Hacker News stories three ways. Which part would you enjoy most?",
+    prompt: "In our Hacker News task, what is MCP?",
+    correct: 0,
     options: [
-      { text: "Teaching the AI to do it by itself", result: "ai" },
-      { text: "Making it run automatically every morning", result: "devops" },
-      { text: "Finding which stories get the most points", result: "data" },
-      { text: "Deciding what a news app should show first", result: "product" },
+      { text: "A standard plug that lets AI use tools like a browser" },
+      { text: "A new programming language" },
+      { text: "A type of laptop" },
+      { text: "A social media app" },
     ],
   },
   {
-    prompt: "You push your code and the website breaks for everyone. What do you do first?",
+    prompt: "What does a pipeline do after you push your code?",
+    correct: 3,
     options: [
-      { text: "Check the logs and undo the last change", result: "devops" },
-      { text: "Find out how many users are affected", result: "data" },
-      { text: "Check if someone broke in on purpose", result: "security" },
-      { text: "Tell users what happened and when it will be fixed", result: "product" },
+      { text: "Prints it" },
+      { text: "Emails it to your teacher" },
+      { text: "Nothing until you click deploy" },
+      { text: "Tests it and publishes it automatically" },
     ],
   },
   {
-    prompt: "Which line would you like on your future job card?",
+    prompt: "Which statement about IT jobs is true?",
+    correct: 1,
+    options: [
+      { text: "You must be a genius coder" },
+      { text: "Half the people building an app never write code" },
+      { text: "Only IT companies need IT people" },
+      { text: "You need a CS degree for every IT job" },
+    ],
+  },
+  {
+    prompt: "Which job card would you like?",
     options: [
       { text: "I teach machines to learn", result: "ai" },
       { text: "I keep apps running 24/7", result: "devops" },
       { text: "I turn numbers into answers", result: "data" },
       { text: "I protect people's data", result: "security" },
+    ],
+  },
+  {
+    prompt: "The food app breaks on a busy Friday night. What do you do first?",
+    options: [
+      { text: "Check the logs and undo the last change", result: "devops" },
+      { text: "Find out how many users are affected", result: "data" },
+      { text: "Tell users what happened and when it will be fixed", result: "product" },
+      { text: "Check if someone broke in on purpose", result: "security" },
+    ],
+  },
+  {
+    prompt: "You can build one thing for your college. What is it?",
+    options: [
+      { text: "A smart assistant that answers students' questions", result: "ai" },
+      { text: "A dashboard showing which classes are most popular", result: "data" },
+      { text: "A tool that collects what students really need", result: "product" },
+      { text: "A login system nobody can hack", result: "security" },
     ],
   },
 ];

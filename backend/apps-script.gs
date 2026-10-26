@@ -1,6 +1,7 @@
 // Google Apps Script: paste into a Google Sheet's Extensions > Apps Script.
-// Sheet tab "Responses" gets columns: time, result, name, year.
-const SHEET = "Responses";
+// Tab "Poll" gets one anonymous row per student: time, then the chosen option (0-3) for each question.
+const SHEET = "Poll";
+const QUESTIONS = 8;
 
 function doPost(e) {
   const lock = LockService.getScriptLock();
@@ -8,7 +9,12 @@ function doPost(e) {
   try {
     const d = JSON.parse(e.postData.contents);
     const sh = SpreadsheetApp.getActive().getSheetByName(SHEET) || SpreadsheetApp.getActive().insertSheet(SHEET);
-    sh.appendRow([new Date(), String(d.result || "").slice(0, 20), String(d.name || "").slice(0, 30), String(d.year || "").slice(0, 20)]);
+    const row = [new Date()];
+    for (let i = 0; i < QUESTIONS; i++) {
+      const v = Number((d.answers || [])[i]);
+      row.push(Number.isInteger(v) && v >= 0 && v <= 3 ? v : "");
+    }
+    sh.appendRow(row);
     return ContentService.createTextOutput("ok");
   } finally {
     lock.releaseLock();
@@ -17,9 +23,16 @@ function doPost(e) {
 
 function doGet() {
   const sh = SpreadsheetApp.getActive().getSheetByName(SHEET);
-  const rows = sh && sh.getLastRow() > 0 ? sh.getRange(1, 1, sh.getLastRow(), 4).getValues() : [];
-  const counts = {};
-  rows.forEach((r) => { counts[r[1]] = (counts[r[1]] || 0) + 1; });
-  const recent = rows.slice(-5).reverse().map((r) => r[2]);
-  return ContentService.createTextOutput(JSON.stringify({ counts, recent })).setMimeType(ContentService.MimeType.JSON);
+  const rows = sh && sh.getLastRow() > 0 ? sh.getRange(1, 1, sh.getLastRow(), QUESTIONS + 1).getValues() : [];
+  const qcounts = Array.from({ length: QUESTIONS }, () => [0, 0, 0, 0]);
+  let total = 0;
+  rows.forEach((r) => {
+    if (!(r[0] instanceof Date)) return;
+    total++;
+    for (let q = 0; q < QUESTIONS; q++) {
+      const v = r[q + 1];
+      if (v !== "" && qcounts[q][v] !== undefined) qcounts[q][v]++;
+    }
+  });
+  return ContentService.createTextOutput(JSON.stringify({ total, qcounts })).setMimeType(ContentService.MimeType.JSON);
 }
