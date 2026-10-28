@@ -26,13 +26,13 @@ export const RESULTS = {
 
 export const QUESTIONS = [
   {
-    prompt: "In the biryani order story, who decides how the app looks and feels?",
+    prompt: "Who built this app?",
     correct: 1,
     options: [
-      { text: "Backend engineer" },
-      { text: "UI/UX designer" },
-      { text: "Security engineer" },
-      { text: "Data scientist" },
+      { text: "Salman" },
+      { text: "Somesh" },
+      { text: "Harish" },
+      { text: "Power house" },
     ],
   },
   {
